@@ -42,7 +42,7 @@ public class PatientDaoImpl implements PatientDao {
     }
 
     @Override
-    public List<Patient> findByDiagnosis(Diagnosis diagnosis){
+    public List<Patient> findByDiagnosis(Diagnosis diagnosis) {
         List<Patient> desiredPatients = new ArrayList<>();
         List<Patient> allPatients = Warehouse.getInstance().getPatients();
         EnumSet<Diagnosis> patientDiagnoses;
@@ -57,7 +57,7 @@ public class PatientDaoImpl implements PatientDao {
 
     @Override
     public List<Patient> findByMedicalRecordsInInterval(int firstNumberOfInterval,
-                                                        int lastNumberOfInterval){
+                                                        int lastNumberOfInterval) {
         List<Patient> desiredPatients = new ArrayList<>();
         List<Patient> allPatients = Warehouse.getInstance().getPatients();
         int numberOfMedicalRecord;
@@ -77,7 +77,7 @@ public class PatientDaoImpl implements PatientDao {
 
         List<Patient> patients = Warehouse.getInstance().getPatients();
         int i = 0;
-        while (i < patients.size()){
+        while (i < patients.size()) {
             if (patients.get(i).equals(patient)) {
                 contains = false;
                 break;
@@ -108,6 +108,5 @@ public class PatientDaoImpl implements PatientDao {
         patients.get(patient.getId()).setDiagnoses(diagnoses);
         Warehouse.getInstance().setPatients(patients);
     }
-
 
 }

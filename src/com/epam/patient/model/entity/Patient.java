@@ -1,19 +1,17 @@
 package com.epam.patient.model.entity;
 
 import com.epam.patient.exception.ValidationException;
+import com.epam.patient.util.IdGenerator;
 
+import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.Objects;
 
 public class Patient {
-    private static int counter = 1;
 
-    private final int id;
-    {
-        id = counter;
-        counter++;
-    }
+    private static final IdGenerator idGenerator = new IdGenerator();
 
+    private final int id = idGenerator.generateIntId();
     private String lastName;
     private String firstName;
     private String patronymic;
@@ -24,46 +22,24 @@ public class Patient {
 
 
     public Patient(String lastName, String firstName, String patronymic, String address,
-                   String phoneNumber, int numberOfMedicalRecord, Diagnosis... diagnoses) throws ValidationException {
-        if (!checkPhoneNumber(phoneNumber)) {
-            throw new ValidationException("wrong phoneNumber");
-        }
-        if (!checkNumberOfMedicalRecord(numberOfMedicalRecord)){
-            throw new ValidationException("wrong number of medical record");
-        }
+                   String phoneNumber, int numberOfMedicalRecord, Diagnosis... diagnoses) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.patronymic = patronymic;
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.numberOfMedicalRecord = numberOfMedicalRecord;
-        for(Diagnosis diagnosis:diagnoses){
-            this.diagnoses.add(diagnosis);
-        }
+        this.diagnoses.addAll(Arrays.asList(diagnoses));
     }
 
     public Patient(String lastName, String firstName, String patronymic, String address,
                    String phoneNumber, int numberOfMedicalRecord) throws ValidationException {
-        if (!checkPhoneNumber(phoneNumber)) {
-            throw new ValidationException("wrong phoneNumber");
-        }
-        if (!checkNumberOfMedicalRecord(numberOfMedicalRecord)){
-            throw new ValidationException("wrong number of medical record");
-        }
         this.lastName = lastName;
         this.firstName = firstName;
         this.patronymic = patronymic;
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.numberOfMedicalRecord = numberOfMedicalRecord;
-    }
-
-    private boolean checkPhoneNumber(String phoneNumber) {
-        return phoneNumber.matches("\\+?\\d+");
-    }
-
-    private boolean checkNumberOfMedicalRecord(int numberOfMedicalRecord) {
-        return String.valueOf(numberOfMedicalRecord).matches("\\d{8}");
     }
 
     public int getId() {
