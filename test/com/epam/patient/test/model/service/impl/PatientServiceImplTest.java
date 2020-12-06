@@ -62,8 +62,7 @@ public class PatientServiceImplTest {
         }
         Patient expected = patient;
         int patientId = patient.getId();
-        Patient actual = null;
-        actual = patientService.findPatientById(patientId);
+        Patient actual = patientService.findPatientById(patientId);
 
         assertEquals(actual, expected);
     }

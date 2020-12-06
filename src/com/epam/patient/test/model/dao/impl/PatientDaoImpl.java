@@ -30,16 +30,7 @@ public class PatientDaoImpl implements PatientDao {
 
     @Override
     public Optional<Patient> findPatientById(int id) {
-        List<Patient> allPatients = Warehouse.getInstance().getPatients();
-        Patient patient = null;
-        int i = 0;
-        while (i < allPatients.size()) {
-            if (allPatients.get(i).getId() == id) {
-                patient = allPatients.get(i);
-                break;
-            }
-            i++;
-        }
+        Patient patient = Warehouse.getInstance().getPatient(id);
         return Optional.ofNullable(patient);
     }
 
@@ -91,13 +82,11 @@ public class PatientDaoImpl implements PatientDao {
 
     @Override
     public void delete(Patient patient) throws DaoException {
-        List<Patient> patients = Warehouse.getInstance().getPatients();
-
         if (!contains(patient)) {
             throw new DaoException("patient doesn't exist");
         }
-        patients.remove(patient);
-        Warehouse.getInstance().setPatients(patients);
+
+        Warehouse.getInstance().remove(patient);
     }
 
     @Override

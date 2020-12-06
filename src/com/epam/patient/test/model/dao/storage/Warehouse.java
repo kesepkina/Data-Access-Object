@@ -34,12 +34,17 @@ public class Warehouse {
         patients.remove(patient);
     }
 
-    public void remove(int id) {
-        patients.remove(id);
-    }
-
     public Patient getPatient(int id) {
-        return patients.get(id);
+        Patient patient = null;
+        int i = 0;
+        while (i < patients.size()) {
+            if (patients.get(i).getId() == id) {
+                patient = patients.get(id);
+                break;
+            }
+            i++;
+        }
+        return patient;
     }
 
 }
