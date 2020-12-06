@@ -1,6 +1,5 @@
 package com.epam.patient.test.model.entity;
 
-import com.epam.patient.exception.ValidationException;
 import com.epam.patient.util.IdGenerator;
 
 import java.util.Arrays;
@@ -29,7 +28,7 @@ public class Patient {
     }
 
     public Patient(String lastName, String firstName, String patronymic, String address,
-                   String phoneNumber, int numberOfMedicalRecord) throws ValidationException {
+                   String phoneNumber, int numberOfMedicalRecord) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.patronymic = patronymic;

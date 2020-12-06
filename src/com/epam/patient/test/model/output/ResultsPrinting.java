@@ -19,12 +19,23 @@ public class ResultsPrinting {
 
     public void printListOfPatients(List<Patient> patients) {
         StringBuilder patientInfo = new StringBuilder();
+        includePatientsFromList(patientInfo, patients);
+        logger.info(patientInfo);
+    }
+
+    public void printListOfPatients(List<Patient> patients, String info) {
+        StringBuilder patientInfo = new StringBuilder();
+        patientInfo.append("\n").append(info).append("\n");
+        includePatientsFromList(patientInfo, patients);
+        logger.info(patientInfo);
+    }
+
+    private void includePatientsFromList(StringBuilder patientInfo, List<Patient> patients) {
         patientInfo.append(String.format("%n%4s%35s%25s%15s%17s%20s%n", "ID", "NAME", "ADDRESS", "PHONE", "MEDICAL RECORD", "DIAGNOSES"));
         for (Patient patient : patients) {
             patientInfo.append(String.format("%4d%35s%25s%15s%17d%20s%n", patient.getId(), patient.getLastName() + " " + patient.getFirstName() +
                             " " + patient.getPatronymic(), patient.getAddress(), patient.getPhoneNumber(), patient.getNumberOfMedicalRecord(),
                     patient.getDiagnoses().toString()));
         }
-        logger.info(patientInfo);
     }
 }

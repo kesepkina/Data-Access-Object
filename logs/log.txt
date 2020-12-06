@@ -1,70 +1,4 @@
-2020-12-06 19:59:22 [main] ERROR com.epam.patient.main.Main - Error by filling: 
-com.epam.patient.exception.FillingException: com.epam.patient.exception.ValidationException: Last name isn't correct: Bobrov
-	at com.epam.patient.test.model.reader.WarehouseFilling.fillFromTxtFile(WarehouseFilling.java:89) ~[PatientDAO/:?]
-	at com.epam.patient.main.Main.main(Main.java:15) [PatientDAO/:?]
-Caused by: com.epam.patient.exception.ValidationException: Last name isn't correct: Bobrov
-	at com.epam.patient.test.model.reader.WarehouseFilling.fillFromTxtFile(WarehouseFilling.java:55) ~[PatientDAO/:?]
-	... 1 more
-2020-12-06 20:00:45 [main] ERROR com.epam.patient.main.Main - Error by filling: 
-com.epam.patient.exception.FillingException: com.epam.patient.exception.ValidationException: Last name isn't correct: Bobrov
-	at com.epam.patient.test.model.reader.WarehouseFilling.fillFromTxtFile(WarehouseFilling.java:88) ~[PatientDAO/:?]
-	at com.epam.patient.main.Main.main(Main.java:15) [PatientDAO/:?]
-Caused by: com.epam.patient.exception.ValidationException: Last name isn't correct: Bobrov
-	at com.epam.patient.test.model.reader.WarehouseFilling.fillFromTxtFile(WarehouseFilling.java:54) ~[PatientDAO/:?]
-	... 1 more
-2020-12-06 20:01:39 [main] ERROR com.epam.patient.main.Main - Error by filling: 
-com.epam.patient.exception.FillingException: com.epam.patient.exception.ValidationException: Last name isn't correct: Bobrov
-	at com.epam.patient.test.model.reader.WarehouseFilling.fillFromTxtFile(WarehouseFilling.java:88) ~[PatientDAO/:?]
-	at com.epam.patient.main.Main.main(Main.java:15) [PatientDAO/:?]
-Caused by: com.epam.patient.exception.ValidationException: Last name isn't correct: Bobrov
-	at com.epam.patient.test.model.reader.WarehouseFilling.fillFromTxtFile(WarehouseFilling.java:54) ~[PatientDAO/:?]
-	... 1 more
-2020-12-06 20:03:06 [main] ERROR com.epam.patient.main.Main - Error by filling: 
-com.epam.patient.exception.FillingException: com.epam.patient.exception.DaoException: patient already exists
-	at com.epam.patient.test.model.reader.WarehouseFilling.fillFromTxtFile(WarehouseFilling.java:88) ~[PatientDAO/:?]
-	at com.epam.patient.main.Main.main(Main.java:15) [PatientDAO/:?]
-Caused by: com.epam.patient.exception.DaoException: patient already exists
-	at com.epam.patient.test.model.dao.impl.PatientDaoImpl.addPatient(PatientDaoImpl.java:18) ~[PatientDAO/:?]
-	at com.epam.patient.test.model.reader.WarehouseFilling.fillFromTxtFile(WarehouseFilling.java:85) ~[PatientDAO/:?]
-	... 1 more
-2020-12-06 20:12:46 [main] ERROR com.epam.patient.main.Main - Error by filling: 
-com.epam.patient.exception.FillingException: com.epam.patient.exception.DaoException: patient already exists
-	at com.epam.patient.test.model.reader.WarehouseFilling.fillFromTxtFile(WarehouseFilling.java:89) ~[PatientDAO/:?]
-	at com.epam.patient.main.Main.main(Main.java:15) [PatientDAO/:?]
-Caused by: com.epam.patient.exception.DaoException: patient already exists
-	at com.epam.patient.test.model.dao.impl.PatientDaoImpl.addPatient(PatientDaoImpl.java:18) ~[PatientDAO/:?]
-	at com.epam.patient.test.model.reader.WarehouseFilling.fillFromTxtFile(WarehouseFilling.java:86) ~[PatientDAO/:?]
-	... 1 more
-2020-12-06 20:37:37 [main] ERROR com.epam.patient.main.Main - Error by filling: 
-com.epam.patient.exception.FillingException: com.epam.patient.exception.ValidationException: Number of medical record isn't correct: 121112004
-	at com.epam.patient.test.model.reader.WarehouseFilling.fillFromTxtFile(WarehouseFilling.java:91) ~[PatientDAO/:?]
-	at com.epam.patient.main.Main.main(Main.java:14) [PatientDAO/:?]
-Caused by: com.epam.patient.exception.ValidationException: Number of medical record isn't correct: 121112004
-	at com.epam.patient.test.model.reader.WarehouseFilling.fillFromTxtFile(WarehouseFilling.java:66) ~[PatientDAO/:?]
-	... 1 more
-2020-12-06 21:20:41 [main] INFO  com.epam.patient.test.model.output.ResultsPrinting -   ID                               NAME                  ADDRESS          PHONE   MEDICAL RECORD           DIAGNOSES
-   0            Bobrov Igor Mihaylovich    Nezavisimosti 120, 12  +375296472390         12112001                  []
-   1        Petrov Nikita Alexandrovich             Mavra 14, 23  +375442349065         12112034         [SCOLIOSIS]
-   2             Bobrov Ilya Maximovich     Dzerzhinskaga 109, 9    80296790912         12111560         [SCOLIOSIS]
-   3        Vasiliev Mihail Vitalyevich         Voyskovaya 3, 42  +375294565756         12111823          [COVID_19]
-   4      Valuyeva Alexandra Vitalyevna      Tsimiryazeva 45, 30  +375443895675         12115678          [COVID_19]
-   5            Pirova Diana Arkadyevna      Rakassouskaga 12, 3    80336239812         12111732                  []
-   6         Antropov Alexey Igoryevich           Gurskogo 2, 34  +375296665544         12112002     [FLU, DIABETES]
-   7         Valova Valentina Fedorovna         Zavodskaya 20, 1    80442346575         12112003                  []
-   8      Bobrov Konstantin Genadyevich     Nowowilenskaya 25, 1  +375298887799         12112004          [DIABETES]
-
-2020-12-06 21:21:28 [main] INFO  com.epam.patient.test.model.output.ResultsPrinting -   ID                               NAME                  ADDRESS          PHONE   MEDICAL RECORD           DIAGNOSES
-   0            Bobrov Igor Mihaylovich    Nezavisimosti 120, 12  +375296472390         12112001                  []
-   1        Petrov Nikita Alexandrovich             Mavra 14, 23  +375442349065         12112034         [SCOLIOSIS]
-   2             Bobrov Ilya Maximovich     Dzerzhinskaga 109, 9    80296790912         12111560         [SCOLIOSIS]
-   3        Vasiliev Mihail Vitalyevich         Voyskovaya 3, 42  +375294565756         12111823          [COVID_19]
-   4      Valuyeva Alexandra Vitalyevna      Tsimiryazeva 45, 30  +375443895675         12115678          [COVID_19]
-   5            Pirova Diana Arkadyevna      Rakassouskaga 12, 3    80336239812         12111732                  []
-   6         Antropov Alexey Igoryevich           Gurskogo 2, 34  +375296665544         12112002     [FLU, DIABETES]
-   7         Valova Valentina Fedorovna         Zavodskaya 20, 1    80442346575         12112003                  []
-   8      Bobrov Konstantin Genadyevich     Nowowilenskaya 25, 1  +375298887799         12112004          [DIABETES]
-
-2020-12-06 21:23:04 [main] INFO  com.epam.patient.test.model.output.ResultsPrinting - 
+2020-12-07 00:09:22 [main] INFO  com.epam.patient.test.model.output.ResultsPrinting - 
   ID                               NAME                  ADDRESS          PHONE   MEDICAL RECORD           DIAGNOSES
    0            Bobrov Igor Mihaylovich    Nezavisimosti 120, 12  +375296472390         12112001                  []
    1        Petrov Nikita Alexandrovich             Mavra 14, 23  +375442349065         12112034         [SCOLIOSIS]
@@ -74,5 +8,61 @@ Caused by: com.epam.patient.exception.ValidationException: Number of medical rec
    5            Pirova Diana Arkadyevna      Rakassouskaga 12, 3    80336239812         12111732                  []
    6         Antropov Alexey Igoryevich           Gurskogo 2, 34  +375296665544         12112002     [FLU, DIABETES]
    7         Valova Valentina Fedorovna         Zavodskaya 20, 1    80442346575         12112003                  []
-   8      Bobrov Konstantin Genadyevich     Nowowilenskaya 25, 1  +375298887799         12112004          [DIABETES]
+   8           Bobrov Anton Genadyevich     Nowowilenskaya 25, 1  +375298887799         12112004          [DIABETES]
+
+2020-12-07 00:09:22 [main] INFO  com.epam.patient.test.model.output.ResultsPrinting - 
+All patients sorted by last name and then by first name
+
+  ID                               NAME                  ADDRESS          PHONE   MEDICAL RECORD           DIAGNOSES
+   6         Antropov Alexey Igoryevich           Gurskogo 2, 34  +375296665544         12112002     [FLU, DIABETES]
+   8           Bobrov Anton Genadyevich     Nowowilenskaya 25, 1  +375298887799         12112004          [DIABETES]
+   0            Bobrov Igor Mihaylovich    Nezavisimosti 120, 12  +375296472390         12112001                  []
+   2             Bobrov Ilya Maximovich     Dzerzhinskaga 109, 9    80296790912         12111560         [SCOLIOSIS]
+   1        Petrov Nikita Alexandrovich             Mavra 14, 23  +375442349065         12112034         [SCOLIOSIS]
+   5            Pirova Diana Arkadyevna      Rakassouskaga 12, 3    80336239812         12111732                  []
+   7         Valova Valentina Fedorovna         Zavodskaya 20, 1    80442346575         12112003                  []
+   4      Valuyeva Alexandra Vitalyevna      Tsimiryazeva 45, 30  +375443895675         12115678          [COVID_19]
+   3        Vasiliev Mihail Vitalyevich         Voyskovaya 3, 42  +375294565756         12111823          [COVID_19]
+
+2020-12-07 00:09:22 [main] INFO  com.epam.patient.test.model.output.ResultsPrinting - 
+All patients sorted by last name
+
+  ID                               NAME                  ADDRESS          PHONE   MEDICAL RECORD           DIAGNOSES
+   6         Antropov Alexey Igoryevich           Gurskogo 2, 34  +375296665544         12112002     [FLU, DIABETES]
+   0            Bobrov Igor Mihaylovich    Nezavisimosti 120, 12  +375296472390         12112001                  []
+   2             Bobrov Ilya Maximovich     Dzerzhinskaga 109, 9    80296790912         12111560         [SCOLIOSIS]
+   8           Bobrov Anton Genadyevich     Nowowilenskaya 25, 1  +375298887799         12112004          [DIABETES]
+   1        Petrov Nikita Alexandrovich             Mavra 14, 23  +375442349065         12112034         [SCOLIOSIS]
+   5            Pirova Diana Arkadyevna      Rakassouskaga 12, 3    80336239812         12111732                  []
+   7         Valova Valentina Fedorovna         Zavodskaya 20, 1    80442346575         12112003                  []
+   4      Valuyeva Alexandra Vitalyevna      Tsimiryazeva 45, 30  +375443895675         12115678          [COVID_19]
+   3        Vasiliev Mihail Vitalyevich         Voyskovaya 3, 42  +375294565756         12111823          [COVID_19]
+
+2020-12-07 00:09:22 [main] INFO  com.epam.patient.test.model.output.ResultsPrinting - 
+All patients sorted by number of medical record
+
+  ID                               NAME                  ADDRESS          PHONE   MEDICAL RECORD           DIAGNOSES
+   2             Bobrov Ilya Maximovich     Dzerzhinskaga 109, 9    80296790912         12111560         [SCOLIOSIS]
+   5            Pirova Diana Arkadyevna      Rakassouskaga 12, 3    80336239812         12111732                  []
+   3        Vasiliev Mihail Vitalyevich         Voyskovaya 3, 42  +375294565756         12111823          [COVID_19]
+   0            Bobrov Igor Mihaylovich    Nezavisimosti 120, 12  +375296472390         12112001                  []
+   6         Antropov Alexey Igoryevich           Gurskogo 2, 34  +375296665544         12112002     [FLU, DIABETES]
+   7         Valova Valentina Fedorovna         Zavodskaya 20, 1    80442346575         12112003                  []
+   8           Bobrov Anton Genadyevich     Nowowilenskaya 25, 1  +375298887799         12112004          [DIABETES]
+   1        Petrov Nikita Alexandrovich             Mavra 14, 23  +375442349065         12112034         [SCOLIOSIS]
+   4      Valuyeva Alexandra Vitalyevna      Tsimiryazeva 45, 30  +375443895675         12115678          [COVID_19]
+
+2020-12-07 00:09:22 [main] INFO  com.epam.patient.test.model.output.ResultsPrinting - 
+All patients sorted by number of medical record in reverse order
+
+  ID                               NAME                  ADDRESS          PHONE   MEDICAL RECORD           DIAGNOSES
+   4      Valuyeva Alexandra Vitalyevna      Tsimiryazeva 45, 30  +375443895675         12115678          [COVID_19]
+   1        Petrov Nikita Alexandrovich             Mavra 14, 23  +375442349065         12112034         [SCOLIOSIS]
+   8           Bobrov Anton Genadyevich     Nowowilenskaya 25, 1  +375298887799         12112004          [DIABETES]
+   7         Valova Valentina Fedorovna         Zavodskaya 20, 1    80442346575         12112003                  []
+   6         Antropov Alexey Igoryevich           Gurskogo 2, 34  +375296665544         12112002     [FLU, DIABETES]
+   0            Bobrov Igor Mihaylovich    Nezavisimosti 120, 12  +375296472390         12112001                  []
+   3        Vasiliev Mihail Vitalyevich         Voyskovaya 3, 42  +375294565756         12111823          [COVID_19]
+   5            Pirova Diana Arkadyevna      Rakassouskaga 12, 3    80336239812         12111732                  []
+   2             Bobrov Ilya Maximovich     Dzerzhinskaga 109, 9    80296790912         12111560         [SCOLIOSIS]
 

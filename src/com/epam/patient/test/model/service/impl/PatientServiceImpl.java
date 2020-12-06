@@ -12,7 +12,6 @@ import com.epam.patient.util.PatientValidator;
 
 import java.util.EnumSet;
 import java.util.List;
-import java.util.Optional;
 
 public class PatientServiceImpl implements PatientService {
 
@@ -52,8 +51,8 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public Optional<Patient> findPatientById(int id) {
-        return patientDao.findPatientById(id);
+    public Patient findPatientById(int id) {
+        return patientDao.findPatientById(id).orElse(null);
     }
 
     @Override

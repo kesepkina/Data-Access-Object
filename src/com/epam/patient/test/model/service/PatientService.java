@@ -15,7 +15,7 @@ public interface PatientService {
 
     List<Patient> findAll();
 
-    Optional<Patient> findPatientById(int id);
+    Patient findPatientById(int id) throws ServiceException;
 
     List<Patient> findByDiagnosis(Diagnosis diagnosis);
 

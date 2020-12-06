@@ -6,4 +6,4 @@ Valuyeva | Alexandra | Vitalyevna | Tsimiryazeva 45, 30 | +375443895675 | 121156
 Pirova | Diana | Arkadyevna | Rakassouskaga 12, 3 | 80336239812 | 12111732;
 Antropov | Alexey | Igoryevich | Gurskogo 2, 34 | +375296665544 | 12112002 | FLU, DIABETES;
 Valova | Valentina | Fedorovna | Zavodskaya 20, 1 | 80442346575 | 12112003;
-Bobrov | Konstantin | Genadyevich | Nowowilenskaya 25, 1 | +375298887799 | 12112004 | DIABETES
+Bobrov | Anton | Genadyevich | Nowowilenskaya 25, 1 | +375298887799 | 12112004 | DIABETES
