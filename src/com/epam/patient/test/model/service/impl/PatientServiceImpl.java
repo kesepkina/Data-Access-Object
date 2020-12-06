@@ -1,12 +1,12 @@
-package com.epam.patient.model.service.impl;
+package com.epam.patient.test.model.service.impl;
 
 import com.epam.patient.exception.DaoException;
 import com.epam.patient.exception.ServiceException;
 import com.epam.patient.exception.ValidationException;
-import com.epam.patient.model.dao.impl.PatientDaoImpl;
-import com.epam.patient.model.entity.Diagnosis;
-import com.epam.patient.model.entity.Patient;
-import com.epam.patient.model.service.PatientService;
+import com.epam.patient.test.model.dao.impl.PatientDaoImpl;
+import com.epam.patient.test.model.entity.Diagnosis;
+import com.epam.patient.test.model.entity.Patient;
+import com.epam.patient.test.model.service.PatientService;
 import com.epam.patient.util.PatientComparator;
 import com.epam.patient.util.PatientValidator;
 
@@ -21,7 +21,7 @@ public class PatientServiceImpl implements PatientService {
     @Override
     public void addPatient(Patient patient) throws ValidationException, ServiceException {
         if (!PatientValidator.checkName(patient.getLastName())) {
-            throw new ValidationException("Last name isn't correct.");
+            throw new ValidationException("Last name isn't correct: " + patient.getLastName());
         }
         if (!PatientValidator.checkName(patient.getFirstName())) {
             throw new ValidationException("First name isn't correct.");
@@ -29,15 +29,16 @@ public class PatientServiceImpl implements PatientService {
         if (!PatientValidator.checkName(patient.getPatronymic())) {
             throw new ValidationException("Patronymic isn't correct.");
         }
-        if (!PatientValidator.checkPhoneNumber(patient.getPhoneNumber())) {
+        if (!PatientValidator.isPhoneNumber(patient.getPhoneNumber())) {
             throw new ValidationException("Phone number isn't correct.");
         }
-        if (!PatientValidator.checkNumberOfMedicalRecord(patient.getNumberOfMedicalRecord())) {
+        if (!PatientValidator.isNumberOfMedicalRecord(patient.getNumberOfMedicalRecord())) {
             throw new ValidationException("Number of medical record isn't correct.");
         }
-        if (!PatientValidator.checkAddress(patient.getAddress())) {
+        if (!PatientValidator.isAddress(patient.getAddress())) {
             throw new ValidationException("Address isn't correct.");
         }
+
         try {
             patientDao.addPatient(patient);
         } catch (DaoException e) {
@@ -96,31 +97,30 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public List<Patient> sortByLastName() {
+    public List<Patient> findAllByLastName() {
         List<Patient> patients = patientDao.findAll();
         patients.sort(PatientComparator.LAST_NAME);
         return patients;
     }
 
     @Override
-    public List<Patient> sortByLastAndFirstName() {
+    public List<Patient> findAllByLastAndFirstName() {
         List<Patient> patients = patientDao.findAll();
         patients.sort(PatientComparator.LAST_NAME.thenComparing(PatientComparator.FIRST_NAME));
         return patients;
     }
 
     @Override
-    public List<Patient> sortByNumberOfMedicalRecord() {
+    public List<Patient> findAllByNumberOfMedicalRecord() {
         List<Patient> patients = patientDao.findAll();
         patients.sort(PatientComparator.MEDICAL_RECORD);
         return patients;
     }
 
     @Override
-    public List<Patient> sortByNumberOfMedicalRecordDesc() {
+    public List<Patient> findAllByNumberOfMedicalRecordDesc() {
         List<Patient> patients = patientDao.findAll();
         patients.sort(PatientComparator.MEDICAL_RECORD.reversed());
         return patients;
     }
-
 }

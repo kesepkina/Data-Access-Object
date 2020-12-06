@@ -1,13 +1,13 @@
-package com.epam.patient.model.dao.storage;
+package com.epam.patient.test.model.dao.storage;
 
-import com.epam.patient.model.entity.Patient;
+import com.epam.patient.test.model.entity.Patient;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Warehouse {
 
-    private static final Warehouse INSTANCE = new Warehouse();
+    private static final Warehouse instance = new Warehouse();
     private List<Patient> patients;
 
     private Warehouse() {
@@ -15,7 +15,7 @@ public class Warehouse {
     }
 
     public static Warehouse getInstance() {
-        return INSTANCE;
+        return instance;
     }
 
     public List<Patient> getPatients() {

@@ -1,9 +1,9 @@
-package com.epam.patient.model.service;
+package com.epam.patient.test.model.service;
 
 import com.epam.patient.exception.ServiceException;
 import com.epam.patient.exception.ValidationException;
-import com.epam.patient.model.entity.Diagnosis;
-import com.epam.patient.model.entity.Patient;
+import com.epam.patient.test.model.entity.Diagnosis;
+import com.epam.patient.test.model.entity.Patient;
 
 import java.util.EnumSet;
 import java.util.List;
@@ -27,11 +27,11 @@ public interface PatientService {
 
     int countPatientsWithoutDiagnosis();
 
-    List<Patient> sortByLastName();
+    List<Patient> findAllByLastName();
 
-    List<Patient> sortByLastAndFirstName();
+    List<Patient> findAllByLastAndFirstName();
 
-    List<Patient> sortByNumberOfMedicalRecord();
+    List<Patient> findAllByNumberOfMedicalRecord();
 
-    List<Patient> sortByNumberOfMedicalRecordDesc();
+    List<Patient> findAllByNumberOfMedicalRecordDesc();
 }

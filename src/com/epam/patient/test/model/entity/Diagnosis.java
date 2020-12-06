@@ -1,4 +1,4 @@
-package com.epam.patient.model.entity;
+package com.epam.patient.test.model.entity;
 
 public enum Diagnosis {
     SCOLIOSIS,

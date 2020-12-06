@@ -1,7 +1,7 @@
-package com.epam.patient.model.dao;
+package com.epam.patient.test.model.dao;
 
-import com.epam.patient.model.entity.Diagnosis;
-import com.epam.patient.model.entity.Patient;
+import com.epam.patient.test.model.entity.Diagnosis;
+import com.epam.patient.test.model.entity.Patient;
 import com.epam.patient.exception.DaoException;
 
 import java.util.EnumSet;

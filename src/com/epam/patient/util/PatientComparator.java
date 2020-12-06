@@ -1,6 +1,6 @@
 package com.epam.patient.util;
 
-import com.epam.patient.model.entity.Patient;
+import com.epam.patient.test.model.entity.Patient;
 
 import java.util.Comparator;
 
@@ -24,11 +24,6 @@ public enum PatientComparator implements Comparator<Patient> {
         @Override
         public int compare(Patient o1, Patient o2) {
             return Integer.compare(o1.getNumberOfMedicalRecord(), o2.getNumberOfMedicalRecord());
-        }
-
-        @Override
-        public Comparator<Patient> reversed() {
-            return null;
         }
     }
 }

@@ -1,24 +1,26 @@
-package com.epam.patient.model.dao.impl;
+package com.epam.patient.test.model.dao.impl;
 
 import com.epam.patient.exception.DaoException;
-import com.epam.patient.model.dao.PatientDao;
-import com.epam.patient.model.entity.Diagnosis;
-import com.epam.patient.model.entity.Patient;
-import com.epam.patient.model.dao.storage.Warehouse;
+import com.epam.patient.test.model.dao.PatientDao;
+import com.epam.patient.test.model.entity.Diagnosis;
+import com.epam.patient.test.model.entity.Patient;
+import com.epam.patient.test.model.dao.storage.Warehouse;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.EnumSet;
+import java.util.List;
+import java.util.Optional;
 
 public class PatientDaoImpl implements PatientDao {
 
     @Override
     public void addPatient(Patient patient) throws DaoException {
-        List<Patient> patients = Warehouse.getInstance().getPatients();
 
         if (contains(patient)) {
             throw new DaoException("patient already exists");
         }
-        patients.add(patient);
-        Warehouse.getInstance().setPatients(patients);
+
+        Warehouse.getInstance().add(patient);
     }
 
     @Override
@@ -73,15 +75,16 @@ public class PatientDaoImpl implements PatientDao {
 
     @Override
     public boolean contains(Patient patient) {
-        boolean contains = true;
+        boolean contains = false;
 
         List<Patient> patients = Warehouse.getInstance().getPatients();
         int i = 0;
         while (i < patients.size()) {
             if (patients.get(i).equals(patient)) {
-                contains = false;
+                contains = true;
                 break;
             }
+            i++;
         }
         return contains;
     }

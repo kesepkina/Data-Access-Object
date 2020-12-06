@@ -7,17 +7,17 @@ public class PatientValidator {
 
     private static final Pattern PHONE_NUMBER = Pattern.compile("\\+?\\d+");
     private static final Pattern MEDICAL_RECORD = Pattern.compile("\\d{8}");
-    private static final Pattern NAME = Pattern.compile("[a-zA-Z-]");
+    private static final Pattern NAME = Pattern.compile("[a-zA-Z]+");
     private static final Pattern ADDRESS = Pattern.compile("^[a-zA-Z-\\s.]+[\\s,\\-\\d]+");
 
     private PatientValidator() {}
 
-    public static boolean checkPhoneNumber(String phoneNumber) {
+    public static boolean isPhoneNumber(String phoneNumber) {
         Matcher matcher = PHONE_NUMBER.matcher(phoneNumber);
         return matcher.matches();
     }
 
-    public static boolean checkNumberOfMedicalRecord(int numberOfMedicalRecord) {
+    public static boolean isNumberOfMedicalRecord(int numberOfMedicalRecord) {
         Matcher matcher = MEDICAL_RECORD.matcher(String.valueOf(numberOfMedicalRecord));
         return matcher.matches();
     }
@@ -27,7 +27,7 @@ public class PatientValidator {
         return matcher.matches();
     }
 
-    public static boolean checkAddress(String address) {
+    public static boolean isAddress(String address) {
         Matcher matcher = ADDRESS.matcher(address);
         return matcher.matches();
     }

@@ -1,17 +1,14 @@
-package com.epam.patient.model.entity;
+package com.epam.patient.test.model.entity;
 
 import com.epam.patient.exception.ValidationException;
 import com.epam.patient.util.IdGenerator;
 
 import java.util.Arrays;
 import java.util.EnumSet;
-import java.util.Objects;
 
 public class Patient {
 
-    private static final IdGenerator idGenerator = new IdGenerator();
-
-    private final int id = idGenerator.generateIntId();
+    private final int id = IdGenerator.generateIntId();
     private String lastName;
     private String firstName;
     private String patronymic;
@@ -19,7 +16,6 @@ public class Patient {
     private String phoneNumber;
     private int numberOfMedicalRecord;
     private EnumSet<Diagnosis> diagnoses = EnumSet.noneOf(Diagnosis.class);
-
 
     public Patient(String lastName, String firstName, String patronymic, String address,
                    String phoneNumber, int numberOfMedicalRecord, Diagnosis... diagnoses) {
@@ -106,20 +102,30 @@ public class Patient {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         Patient patient = (Patient) o;
-        return id == patient.id &&
-                numberOfMedicalRecord == patient.numberOfMedicalRecord &&
-                Objects.equals(lastName, patient.lastName) &&
-                Objects.equals(firstName, patient.firstName) &&
-                Objects.equals(patronymic, patient.patronymic) &&
-                Objects.equals(address, patient.address) &&
-                Objects.equals(phoneNumber, patient.phoneNumber) &&
-                Objects.equals(diagnoses, patient.diagnoses);
+
+        if (id != patient.id) return false;
+        if (numberOfMedicalRecord != patient.numberOfMedicalRecord) return false;
+        if (lastName != null ? !lastName.equals(patient.lastName) : patient.lastName != null) return false;
+        if (firstName != null ? !firstName.equals(patient.firstName) : patient.firstName != null) return false;
+        if (patronymic != null ? !patronymic.equals(patient.patronymic) : patient.patronymic != null) return false;
+        if (address != null ? !address.equals(patient.address) : patient.address != null) return false;
+        if (phoneNumber != null ? !phoneNumber.equals(patient.phoneNumber) : patient.phoneNumber != null) return false;
+        return diagnoses != null ? diagnoses.equals(patient.diagnoses) : patient.diagnoses == null;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, lastName, firstName, patronymic, address, phoneNumber, numberOfMedicalRecord, diagnoses);
+        int result = id;
+        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
+        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
+        result = 31 * result + (patronymic != null ? patronymic.hashCode() : 0);
+        result = 31 * result + (address != null ? address.hashCode() : 0);
+        result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
+        result = 31 * result + numberOfMedicalRecord;
+        result = 31 * result + (diagnoses != null ? diagnoses.hashCode() : 0);
+        return result;
     }
 
     @Override

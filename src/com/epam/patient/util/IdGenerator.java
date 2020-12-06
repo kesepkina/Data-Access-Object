@@ -1,13 +1,11 @@
 package com.epam.patient.util;
 
 public class IdGenerator {
-    private int counter;
+    private static int counter = -1;
 
-    public IdGenerator() {
-        this.counter = -1;
-    }
+    private IdGenerator() {}
 
-    public int generateIntId() {
+    public static int generateIntId() {
         return ++counter;
     }
 }
