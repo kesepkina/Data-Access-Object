@@ -1,12 +1,12 @@
-package com.epam.patient.test.model.service.impl;
+package com.epam.patient.model.service.impl;
 
 import com.epam.patient.exception.FillingException;
 import com.epam.patient.exception.ServiceException;
 import com.epam.patient.exception.ValidationException;
-import com.epam.patient.test.model.entity.Diagnosis;
-import com.epam.patient.test.model.entity.Patient;
-import com.epam.patient.test.model.output.ResultsPrinting;
-import com.epam.patient.test.model.reader.WarehouseFilling;
+import com.epam.patient.model.entity.Diagnosis;
+import com.epam.patient.model.entity.Patient;
+import com.epam.patient.model.output.ResultsPrinting;
+import com.epam.patient.model.reader.WarehouseFilling;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.BeforeClass;
@@ -62,23 +62,23 @@ public class PatientServiceImplTest {
         }
         Patient expected = patient;
         int patientId = patient.getId();
-        Patient actual = patientService.findPatientById(patientId);
+        Patient actual = patientService.findPatientById(patientId).orElse(null);
 
         assertEquals(actual, expected);
     }
 
     @Test
-    public void testFindPatientByIdFalse() {
+    public void testFindPatientByIdNotFound() {
         int patientId = 15;
-        Patient actual = patientService.findPatientById(patientId);
-        assertNull(actual);
+        boolean actual = patientService.findPatientById(patientId).isEmpty();
+        assertTrue(actual);
     }
 
     @Test
     public void testFindByDiagnosis() {
         List<Patient> expected = new ArrayList<>();
-        expected.add(patientService.findPatientById(3));
-        expected.add(patientService.findPatientById(4));
+        expected.add(patientService.findPatientById(3).orElse(null));
+        expected.add(patientService.findPatientById(4).orElse(null));
         List<Patient> actual = patientService.findByDiagnosis(Diagnosis.COVID_19);
         assertEquals(actual, expected);
     }
@@ -86,8 +86,8 @@ public class PatientServiceImplTest {
     @Test
     public void testFindByMedicalRecordsInInterval() {
         List<Patient> expected = new ArrayList<>();
-        expected.add(patientService.findPatientById(6));
-        expected.add(patientService.findPatientById(7));
+        expected.add(patientService.findPatientById(6).orElse(null));
+        expected.add(patientService.findPatientById(7).orElse(null));
         List<Patient> actual = patientService.findByMedicalRecordsInInterval(12112001, 12112004);
         assertEquals(actual, expected);
     }
@@ -102,12 +102,12 @@ public class PatientServiceImplTest {
         }
 
         int patientId = patient.getId();
-        assertNull(patientService.findPatientById(patientId));
+        assertTrue(patientService.findPatientById(patientId).isEmpty());
     }
 
     @Test
     public void testUpdate() {
-        Patient patientForUpdate = patientService.findPatientById(7);
+        Patient patientForUpdate = patientService.findPatientById(7).orElse(null);
         EnumSet<Diagnosis> diagnoses = EnumSet.of(Diagnosis.COVID_19, Diagnosis.MIGRAINE);
 
         try {
@@ -116,7 +116,8 @@ public class PatientServiceImplTest {
             logger.error("Error by updating the patient: ", e);
         }
 
-        patientForUpdate = patientService.findPatientById(7);
+        patientForUpdate = patientService.findPatientById(7).orElse(null);
+        assert patientForUpdate != null;
         assertEquals(patientForUpdate.getDiagnoses(), diagnoses);
     }
 

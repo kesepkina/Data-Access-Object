@@ -1,11 +1,11 @@
-package com.epam.patient.test.model.reader;
+package com.epam.patient.model.reader;
 
 import com.epam.patient.exception.DaoException;
 import com.epam.patient.exception.FillingException;
 import com.epam.patient.exception.ValidationException;
-import com.epam.patient.test.model.dao.impl.PatientDaoImpl;
-import com.epam.patient.test.model.entity.Diagnosis;
-import com.epam.patient.test.model.entity.Patient;
+import com.epam.patient.model.entity.Diagnosis;
+import com.epam.patient.model.entity.Patient;
+import com.epam.patient.model.dao.impl.PatientDaoImpl;
 import com.epam.patient.util.PatientValidator;
 
 import java.io.IOException;

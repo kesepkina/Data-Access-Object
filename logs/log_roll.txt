@@ -1,4 +1,4 @@
-2020-12-07 00:30:32 [main] INFO  com.epam.patient.test.model.output.ResultsPrinting - 
+2020-12-07 09:36:30 [main] INFO  com.epam.patient.model.output.ResultsPrinting - 
 All patients sorted by number of medical record in reverse order
 
   ID                               NAME                  ADDRESS          PHONE   MEDICAL RECORD           DIAGNOSES

@@ -1,12 +1,13 @@
-package com.epam.patient.test.model.service;
+package com.epam.patient.model.service;
 
 import com.epam.patient.exception.ServiceException;
 import com.epam.patient.exception.ValidationException;
-import com.epam.patient.test.model.entity.Diagnosis;
-import com.epam.patient.test.model.entity.Patient;
+import com.epam.patient.model.entity.Diagnosis;
+import com.epam.patient.model.entity.Patient;
 
 import java.util.EnumSet;
 import java.util.List;
+import java.util.Optional;
 
 public interface PatientService {
 
@@ -14,7 +15,7 @@ public interface PatientService {
 
     List<Patient> findAll();
 
-    Patient findPatientById(int id) throws ServiceException;
+    Optional<Patient> findPatientById(int id) throws ServiceException;
 
     List<Patient> findByDiagnosis(Diagnosis diagnosis);
 

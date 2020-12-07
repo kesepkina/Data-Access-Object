@@ -1,6 +1,6 @@
 package com.epam.patient.util;
 
-import com.epam.patient.test.model.entity.Patient;
+import com.epam.patient.model.entity.Patient;
 
 import java.util.Comparator;
 

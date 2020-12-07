@@ -1,6 +1,6 @@
-package com.epam.patient.test.model.dao.storage;
+package com.epam.patient.model.dao.storage;
 
-import com.epam.patient.test.model.entity.Patient;
+import com.epam.patient.model.entity.Patient;
 
 import java.util.ArrayList;
 import java.util.List;

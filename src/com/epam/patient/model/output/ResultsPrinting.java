@@ -1,6 +1,6 @@
-package com.epam.patient.test.model.output;
+package com.epam.patient.model.output;
 
-import com.epam.patient.test.model.entity.Patient;
+import com.epam.patient.model.entity.Patient;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

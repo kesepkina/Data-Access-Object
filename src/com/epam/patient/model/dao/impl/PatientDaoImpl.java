@@ -1,10 +1,10 @@
-package com.epam.patient.test.model.dao.impl;
+package com.epam.patient.model.dao.impl;
 
 import com.epam.patient.exception.DaoException;
-import com.epam.patient.test.model.dao.PatientDao;
-import com.epam.patient.test.model.entity.Diagnosis;
-import com.epam.patient.test.model.entity.Patient;
-import com.epam.patient.test.model.dao.storage.Warehouse;
+import com.epam.patient.model.dao.PatientDao;
+import com.epam.patient.model.entity.Diagnosis;
+import com.epam.patient.model.entity.Patient;
+import com.epam.patient.model.dao.storage.Warehouse;
 
 import java.util.ArrayList;
 import java.util.EnumSet;

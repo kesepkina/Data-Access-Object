@@ -1,17 +1,18 @@
-package com.epam.patient.test.model.service.impl;
+package com.epam.patient.model.service.impl;
 
 import com.epam.patient.exception.DaoException;
 import com.epam.patient.exception.ServiceException;
 import com.epam.patient.exception.ValidationException;
-import com.epam.patient.test.model.dao.impl.PatientDaoImpl;
-import com.epam.patient.test.model.entity.Diagnosis;
-import com.epam.patient.test.model.entity.Patient;
-import com.epam.patient.test.model.service.PatientService;
+import com.epam.patient.model.entity.Diagnosis;
+import com.epam.patient.model.entity.Patient;
+import com.epam.patient.model.service.PatientService;
+import com.epam.patient.model.dao.impl.PatientDaoImpl;
 import com.epam.patient.util.PatientComparator;
 import com.epam.patient.util.PatientValidator;
 
 import java.util.EnumSet;
 import java.util.List;
+import java.util.Optional;
 
 public class PatientServiceImpl implements PatientService {
 
@@ -51,8 +52,8 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public Patient findPatientById(int id) {
-        return patientDao.findPatientById(id).orElse(null);
+    public Optional<Patient> findPatientById(int id) {
+        return patientDao.findPatientById(id);
     }
 
     @Override
